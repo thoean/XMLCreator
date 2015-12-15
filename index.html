@@ -1,0 +1,33 @@
+<!-- index.html -->
+<html>
+    <head>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            function testAPI()
+            {
+//                var url = 'https://hi1zbjlrgk.execute-api.us-west-2.amazonaws.com/prod/HelloWorld';
+                var url = 'https://6pl7cdhk2j.execute-api.us-west-2.amazonaws.com/tests/xmlcreator';
+                jQuery.ajax({
+                    dataType : "json",
+                    url : url,
+                    type : "post",
+                    data: JSON.stringify({
+                        "psAtelier": "EXASUD",
+                        "pnIdPlanche": "889900",
+                        "psActiviteDeProd": "OFFSET",
+                        "psMedia": "350 CM"
+                    }),
+                    success: function (data) {
+                        console.log(data);
+                        $('#maDiv').text(data);
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="testAPI()">Launch jSon</button>
+        <br/><br/><a href="index.html"><button>Refresh</button></a>
+        <pre><span id="maDiv"></span></pre>
+    </body>
+</html>

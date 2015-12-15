@@ -1,8 +1,17 @@
-// Load the SDK
-var builder = require('xmlbuilder');
-var xml = builder.create('root')
-    .ele('xmlbuilder')
-    .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
-    .end({ pretty: true});
+/* index.js */
 
-console.log(xml);
+exports.handler = function(event, context) {
+    console.log("start");
+
+    var builder = require('xmlbuilder');
+
+    var xml = builder.create('manufacturingsheet')
+        .ele('board')
+        .ele('repo', {'type': 'git'}, 'git://github.com/oozcitak/xmlbuilder-js.git')
+        .end({ pretty: true});
+
+    context.succeed(xml);
+
+    console.log("end");
+
+};

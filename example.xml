@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.exafiles.net/devpao/css/fichefab.xsl"?>
+<fichefab>
+  <!--planches-->
+  <planches>
+    <!--Caracteristiques de la planches-->
+    <spec atelier="EXADIGITAL" prix="112.37" numero="861571" nbcmd="1" libelle="417 - 350 CM - QRV" activiteprod="Numérique" datecreation="2015-12-01" datevalidation="" datevisible="" datedepart="2015-12-02" datedepartfaco="          " impression="RV" observationsTechnique=""/>
+    <!--Monteur-->
+    <monteur nom="MONTEUR AUTO" prenom=" " email=""/>
+    <!--support à imprimer-->
+    <substrat support="350g CM Condat Périgord" quantite="417       " format="32x47"/>
+    <!--details de la planche-->
+    <detailsPool>
+      <details name="coul" recto="Quadri recto" verso="Quadri verso"/>
+      <details name="pell" recto="Pelliculage Brillant recto" verso=""/>
+      <details name="vernisSelectif" recto="" verso=""/>
+      <details name="vernisMachine" recto="" verso=""/>
+    </detailsPool>
+    <!--options de la planche-->
+    <optionsPool>
+      <options name="pliage" value=""/>
+      <options name="perforation" value=""/>
+      <options name="rainage" value=""/>
+      <options name="dorure" value=""/>
+      <options name="encollage" value=""/>
+      <options name="decoupeoutil" value=""/>
+      <options name="predecoupe" value=""/>
+      <options name="encreagratter" value=""/>
+      <options name="nbcoinsrond" value="0"/>
+      <options name="faconnage" value=""/>
+    </optionsPool>
+  </planches>
+  <!--OrderPool-->
+  <orderPool>
+    <commandes cmdnum="3305136">
+      <!--Caractéristiques commandes-->
+      <cmdspec cmdquantite="2500" referenceclient="Devis 679747 - SIGNETS CATHEDRALE 42 ST ETIENNE AU" dateimperatif="" cmdnumretir="" refproduit="CCOR-350 CM-PBR-QRV-NUM-RUSH" batpapier="" nbposes="1" ateliercolisage="EXADIGITAL" cmddatedepart="2015-12-02" faconnage="" modelcouleur="" nbPorteCdv="0" commPao="&#13;&#10;&#13;&#10;" commRet=""/>
+      <!--options de la commandes-->
+      <cmdoptionsPool>
+        <cmdoptions name="Délai de production" value="Exarush"/>
+        <cmdoptions name="Quantité" value="                       2500.00"/>
+        <cmdoptions name="Nb de couleurs verso" value="Quadri"/>
+        <cmdoptions name="Pelliculage recto" value="Brillant"/>
+        <cmdoptions name="Longueur (format ouvert)" value="                         24.30"/>
+        <cmdoptions name="Largeur (format ouvert)" value="                          7.20"/>
+        <cmdoptions name="type d'impression" value="Numérique"/>
+        <cmdoptions name="Surface" value="                        174.96"/>
+        <cmdoptions name="Nb de couleurs recto" value="Quadri"/>
+        <cmdoptions name="Support" value="350g couché demi-mat"/>
+        <cmdoptions name="Nb de côtés" value="2"/>
+      </cmdoptionsPool>
+      <!--expedition de la commande-->
+      <transports nom="TNT" poids="15225" conditionnement="0" quantitetransport="2500"/>
+      <!--livraison de la commande-->
+      <adresselivcmd rue="36, BIS RUE DU 11 NOVEMBRE  " codepostal="42100" ville="ST ETIENNE" digicode="" commentaireLivraison="" emailLivraison="saintetienne@corep.fr" nomContact="BADIER" nomDestinataire="SEMACO COREP" pays="France Métropolitaine"/>
+      <!--link to files-->
+      <linkpreview Recto="\\192.168.3.10\Stockage\Prod\Commandes\3306000\3305136\controle\3305136_1-1.jpg" Verso="\\192.168.3.10\Stockage\Prod\Commandes\3306000\3305136\controle\3305136_2-2.jpg"/>
+    </commandes>
+  </orderPool>
+</fichefab>
