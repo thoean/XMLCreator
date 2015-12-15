@@ -44,16 +44,17 @@ exports.handler = function(event, context) {
         var psOperatorName = "";
         var psOperatorSurName = "";
         var psOperatorMail = "";
-        if(event.psOperatorName != undefined)      {psOperatorName = event.psOperatorName;}
-        if(event.psOperatorSurName != undefined)       {psOperatorSurName = event.psOperatorSurName;}
-        if(event.psOperatorMail != undefined)   {psActiviteDeProd = event.psOperatorMail;}
+        if(event.psOperatorName != undefined)       {psOperatorName = event.psOperatorName;}
+        if(event.psOperatorSurName != undefined)    {psOperatorSurName = event.psOperatorSurName;}
+        if(event.psOperatorMail != undefined)       {psActiviteDeProd = event.psOperatorMail;}
 
         //-- build XML
         var xml = builder.create('productionsheet',{version: '1.0', encoding: 'UTF-8'});
 
             //-- board
             xml = xml.com('board details').ele('board');
-                xml = xml.com('workshop name/code').ele('workshop');if(psAtelier!=""){xml = xml.txt(psAtelier);}xml = xml.up();
+                xml = getNode(xml,psAtelier,'workshop','workshop name/code');
+
                 xml = xml.com('board number').ele('idplanche');if(pnIdPlanche!=""){xml = xml.txt(pnIdPlanche);}xml = xml.up();
                 xml = xml.com('kind of production activity').ele('activity');if(psActiviteDeProd!=""){xml = xml.txt(psActiviteDeProd);}xml = xml.up();
 
@@ -90,4 +91,11 @@ exports.handler = function(event, context) {
         context.succeed(xml);
     }
     console.log("end\n");
+
+    function getNode(xml,value,name,com)
+    {
+        if(value!=""){ return xml.com(com).ele(name).txt(value).up(); }
+
+        else { return xml.com(com).ele(name).up(); }
+    }
 };
