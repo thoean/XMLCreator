@@ -5,27 +5,47 @@
         <script>
             function testAPI()
             {
-//                var url = 'https://hi1zbjlrgk.execute-api.us-west-2.amazonaws.com/prod/HelloWorld';
                 var url = 'https://6pl7cdhk2j.execute-api.us-west-2.amazonaws.com/tests/xmlcreator';
                 jQuery.ajax({
                     dataType : "json",
                     url : url,
                     type : "post",
                     data: JSON.stringify({
-                        "psAtelier": "EXASUD",
-//                        "pnIdPlanche": "889900",
-                        "psActiviteDeProd": "OFFSET",
-                        "pnPrice": "3.5",
-                        "pnNbOrder": "3",
-                        "psTitle": "417 - 350 CM - QRV",
-                        "pdDateCreation": "2015-12-21",
-                        "pdDateShippingWithoutFinish": "2015-12-25",
-                        "pdDateShippingWithFinish": "2015-12-25",
-                        "psPrintMethod": "RV",
-                        "psCommentBoard": "ATTENTION",
-                        "psMedia": "350 CM",
-                        "psSize": "32x47",
-                        "pnQuantity": "417"
+                        "asBoard": {
+                            "psAtelier": "EXASUD",
+                            "pnIdPlanche": "889900",
+                            "psActiviteDeProd": "OFFSET",
+                            "pnPrice": "3.5",
+                            "pnNbOrder": "3",
+                            "psTitle": "417 - 350 CM - QRV",
+                            "pdDateCreation": "2015-12-21",
+                            "pdDateShippingWithoutFinish": "2015-12-25",
+                            "pdDateShippingWithFinish": "",
+                            "psPrintMethod": "RV",
+                            "psCommentBoard": "ATTENTION",
+                            "asMedia": {
+                                "psMedia": "350 CM",
+                                "psSize": "32x47",
+                                "pnQuantity": "417"
+                            },
+                            "asOperator":{
+                                "psName": "Moi",
+                                "psSurName": "Toi",
+                                "psMail":""
+                            },
+                            "asSpec": [
+                                {
+                                    "name": "color",
+                                    "recto": "QR",
+                                    "verso": "QV"
+                                },
+                                {
+                                    "name": "pell",
+                                    "recto": "PBR",
+                                    "verso": ""
+                                }
+                            ]
+                        }
                     }),
                     success: function (data) {
                         console.log(data);
