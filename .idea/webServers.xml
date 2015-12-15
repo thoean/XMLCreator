@@ -5,6 +5,13 @@
       <webServer id="4a79cc69-c8c4-4274-812c-18ad5f6ac1fa" name="localhost" url="http://localhost/node/">
         <fileTransfer mountedRoot="/Library/WebServer/Documents/node" accessType="MOUNT" />
       </webServer>
+      <webServer id="517611f9-37b1-4897-b346-da027417feee" name="node" url="http://webpao/aws/">
+        <fileTransfer host="webpao.fr" port="21" rootFolder="/var/www/aws" password="dfccdfc6df9adfd8df9bdfeadfc4" username="flo">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
