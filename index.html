@@ -1,63 +1,74 @@
 <!-- index.html -->
 <html>
-    <head>
-        <script type="text/javascript" src="jquery.js"></script>
-        <script>
-            function testAPI()
-            {
-                var url = 'https://6pl7cdhk2j.execute-api.us-west-2.amazonaws.com/tests/xmlcreator';
-                jQuery.ajax({
-                    dataType : "json",
-                    url : url,
-                    type : "post",
-                    data: JSON.stringify({
-                        "asBoard": {
-                            "psAtelier": "EXASUD",
-                            "pnIdPlanche": "889900",
-                            "psActiviteDeProd": "OFFSET",
-                            "pnPrice": "3.5",
-                            "pnNbOrder": "3",
-                            "psTitle": "417 - 350 CM - QRV",
-                            "pdDateCreation": "2015-12-21",
-                            "pdDateShippingWithoutFinish": "2015-12-25",
-                            "pdDateShippingWithFinish": "",
-                            "psPrintMethod": "RV",
-                            "psCommentBoard": "ATTENTION",
-                            "asMedia": {
-                                "psMedia": "350 CM",
-                                "psSize": "32x47",
-                                "pnQuantity": "417"
-                            },
-                            "asOperator":{
-                                "psName": "Moi",
-                                "psSurName": "Toi",
-                                "psMail":""
-                            },
-                            "asSpec": [
-                                {
-                                    "name": "color",
-                                    "recto": "QR",
-                                    "verso": "QV"
-                                },
-                                {
-                                    "name": "pell",
-                                    "recto": "PBR",
-                                    "verso": ""
-                                }
-                            ]
-                        }
-                    }),
-                    success: function (data) {
-                        console.log(data);
-                        $('#maDiv').text(data);
-                    }
-                });
-            }
-        </script>
-    </head>
-    <body>
-        <button onclick="testAPI()">Launch jSon</button>
-        <br/><br/><a href="index.html"><button>Refresh</button></a>
-        <pre><span id="maDiv"></span></pre>
-    </body>
+<head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+        function testAPI()
+        {
+            var url = 'https://6pl7cdhk2j.execute-api.us-west-2.amazonaws.com/tests/xmlcreator';
+            jQuery.ajax({
+                dataType : "json",
+                url : url,
+                type : "post",
+                data: JSON.stringify({
+                    "Board": {
+                        "Main": {
+                            "Number": "889900",
+                            "Workshop": {"Name": "EXASUD"}
+                        },
+                        "Sub": [
+                            {
+                                "Number": "889902",
+                                "Workshop": {"Name": "EXAVERNIS"}
+                            }, {
+                                "Number": "889903",
+                                "Workshop": {"Name": "SOLANDEC"}
+                            }
+                        ],
+                        "ProductionActivity": "OFFSET",
+                        "Price": "3.5",
+                        "NbOrder": "3",
+                        "Title": "417 - 350 CM - QRV",
+                        "DateCreation": "2015-12-21",
+                        "DateShippingWithoutFinish": "2015-12-25",
+                        "DateShippingWithFinish": "",
+                        "PrintMethod": "RV",
+                        "CommentBoard": "ATTENTION",
+                        "Media": {
+                            "Kind": "350 CM",
+                            "Size": "32x47",
+                            "Quantity": "417"
+                        },
+                        "Operator": {
+                            "Name": "Moi",
+                            "SurName": "Toi",
+                            "Mail": ""
+                        },
+                        "Spec": [
+                            {
+                                "Name": "color",
+                                "Front": "QR",
+                                "Back": "QV"
+                            }, {
+                                "Name": "laminating",
+                                "Front": "LGF",
+                                "Back": ""
+                            }
+                        ]
+                    },
+                    "Orders":"test"
+                }),
+                success: function (data) {
+                    console.log(data);
+                    $('#maDiv').text(data);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<button onclick="testAPI()">Launch jSon</button>
+<br/><br/><a href="index.html"><button>Refresh</button></a>
+<pre><span id="maDiv"></span></pre>
+</body>
 </html>
