@@ -5,59 +5,64 @@
     <script>
         function testAPI()
         {
+            var parameter = {
+                "Board": {
+                    "Main": {
+                        "Number": "889900",
+                        "Workshop": {"Name": "EXASUD"}
+                    },
+                    "Sub": [
+                        {
+                            "Number": "889902",
+                            "Workshop": {"Name": "EXAVERNIS"}
+                        }, {
+                            "Number": "889903",
+                            "Workshop": {"Name": "SOLANDEC"}
+                        }
+                    ],
+                    "ProductionActivity": "OFFSET",
+                    "Price": "3.5",
+                    "NbOrder": "3",
+                    "Title": "417 - 350 CM - QRV",
+                    "DateCreation": "2015-12-21",
+                    "DateShippingWithoutFinish": "2015-12-25",
+                    "DateShippingWithFinish": "",
+                    "PrintMethod": "RV",
+                    "CommentBoard": "ATTENTION",
+                    "Media": {
+                        "Kind": "350 CM",
+                        "Size": "32x47",
+                        "Quantity": "417"
+                    },
+                    "Operator": {
+                        "Name": "Moi",
+                        "SurName": "Toi",
+                        "Mail": ""
+                    },
+                    "Spec": [
+                        {
+                            "Name": "color",
+                            "Front": "QR",
+                            "Back": "QV"
+                        }, {
+                            "Name": "laminating",
+                            "Front": "LGF",
+                            "Back": ""
+                        }
+                    ]
+                },
+                "Orders":"test"
+            };
+
+            $('#param').text(JSON.stringify(parameter));
+
             var url = 'https://6pl7cdhk2j.execute-api.us-west-2.amazonaws.com/tests/xmlcreator';
+
             jQuery.ajax({
                 dataType : "json",
                 url : url,
                 type : "post",
-                data: JSON.stringify({
-                    "Board": {
-                        "Main": {
-                            "Number": "889900",
-                            "Workshop": {"Name": "EXASUD"}
-                        },
-                        "Sub": [
-                            {
-                                "Number": "889902",
-                                "Workshop": {"Name": "EXAVERNIS"}
-                            }, {
-                                "Number": "889903",
-                                "Workshop": {"Name": "SOLANDEC"}
-                            }
-                        ],
-                        "ProductionActivity": "OFFSET",
-                        "Price": "3.5",
-                        "NbOrder": "3",
-                        "Title": "417 - 350 CM - QRV",
-                        "DateCreation": "2015-12-21",
-                        "DateShippingWithoutFinish": "2015-12-25",
-                        "DateShippingWithFinish": "",
-                        "PrintMethod": "RV",
-                        "CommentBoard": "ATTENTION",
-                        "Media": {
-                            "Kind": "350 CM",
-                            "Size": "32x47",
-                            "Quantity": "417"
-                        },
-                        "Operator": {
-                            "Name": "Moi",
-                            "SurName": "Toi",
-                            "Mail": ""
-                        },
-                        "Spec": [
-                            {
-                                "Name": "color",
-                                "Front": "QR",
-                                "Back": "QV"
-                            }, {
-                                "Name": "laminating",
-                                "Front": "LGF",
-                                "Back": ""
-                            }
-                        ]
-                    },
-                    "Orders":"test"
-                }),
+                data: JSON.stringify(parameter),
                 success: function (data) {
                     console.log(data);
                     $('#maDiv').text(data);
@@ -66,9 +71,13 @@
         }
     </script>
 </head>
+
 <body>
 <button onclick="testAPI()">Launch jSon</button>
 <br/><br/><a href="index.html"><button>Refresh</button></a>
+<h3>PARAMS</h3>
+<code><span id="param"></span></code>
+<h3>XML</h3>
 <pre><span id="maDiv"></span></pre>
 </body>
 </html>
